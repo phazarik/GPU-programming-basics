@@ -2,12 +2,12 @@
 
 //The GPU function:
 __global__ void print_numbers(int N){
-	int thread_id = threadIdx.x;
-	int block_id = blockIdx.x;
+	int thread_index = threadIdx.x;
+	int block_index = blockIdx.x;
 	int idx = threadIdx.x + blockIdx.x * blockDim.x;
 	if(idx < N){
 		//Include all the GPU tasks inside this 'if' condition for safety.
-		printf("Thread ID = %d , Block ID = %d, Core ID = %d \n", thread_id, block_id, idx);
+		printf("thread index (in each block) = %d , block index = %d, thread ID = %d \n", thread_index, block_index, idx);
 	}
 }
 

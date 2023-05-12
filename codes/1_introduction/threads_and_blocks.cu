@@ -2,9 +2,9 @@
 
 //The GPU function:
 __global__ void print_numbers(){
-	int thread_id = threadIdx.x;
-	int block_id = blockIdx.x;
-	printf("Thread ID = %d , Block ID = %d \n", thread_id, block_id);
+	int thread_index = threadIdx.x;
+	int block_index = blockIdx.x;
+	printf("thread index (in each block) = %d, block index = %d \n", thread_index, block_index);
 }
 
 int main(){
