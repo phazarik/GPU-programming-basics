@@ -45,7 +45,7 @@ int main(){
   //Verification:
   bool areDoubled = checkElementsAreDoubled(a, N);
   printf("All elements were doubled? %s\n", areDoubled ? "TRUE" : "FALSE");
-  //If everything goes right, this should print TRUE
+  //If everything goes right, this should print TRUE.
 
   cudaFree(a);
 }

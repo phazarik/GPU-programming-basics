@@ -9,9 +9,11 @@ __global__ void helloGPU(){printf("Hello from the GPU.\n");}
 
 int main(){
     helloCPU();
+    
     //Add an execution configuration with the <<<...>>> syntax.
     //It will launch this function as a kernel on the GPU.
     helloGPU<<<1, 1>>>();
+    
     //`cudaDeviceSynchronize` will block the CPU stream until all GPU kernels have completed.
     cudaDeviceSynchronize();
 }
